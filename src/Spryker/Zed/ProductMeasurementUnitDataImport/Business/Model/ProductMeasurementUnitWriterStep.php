@@ -27,11 +27,6 @@ class ProductMeasurementUnitWriterStep extends PublishAwareStep implements DataI
      */
     protected const PRODUCT_MEASUREMENT_UNIT_PUBLISH = 'ProductMeasurementUnit.product_measurement_unit.publish';
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $productMeasurementUnitEntity = $this->saveProductMeasurementUnit($dataSet);
@@ -56,11 +51,6 @@ class ProductMeasurementUnitWriterStep extends PublishAwareStep implements DataI
         return (int)$defaultPrecision;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnit
-     */
     protected function saveProductMeasurementUnit(DataSetInterface $dataSet): SpyProductMeasurementUnit
     {
         $productMeasurementUnitEntity = SpyProductMeasurementUnitQuery::create()

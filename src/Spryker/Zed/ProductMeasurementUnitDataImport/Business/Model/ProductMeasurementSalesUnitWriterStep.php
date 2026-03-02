@@ -33,11 +33,6 @@ class ProductMeasurementSalesUnitWriterStep extends PublishAwareStep implements 
      */
     protected static $productMeasurementUnitIdBuffer;
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $dataSet = $this->filterDataSet($dataSet);
@@ -92,11 +87,6 @@ class ProductMeasurementSalesUnitWriterStep extends PublishAwareStep implements 
         return $spyProductMeasurementBaseUnitEntity;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface
-     */
     protected function filterDataSet(DataSetInterface $dataSet): DataSetInterface
     {
         if ($dataSet[ProductMeasurementSalesUnitDataSet::COLUMN_CONVERSION] === '') {
@@ -124,9 +114,6 @@ class ProductMeasurementSalesUnitWriterStep extends PublishAwareStep implements 
         return static::$productMeasurementUnitIdBuffer[$productMeasurementUnitCode];
     }
 
-    /**
-     * @return void
-     */
     protected function loadProductMeasurementUnitIds(): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $productMeasurementUnitCollection */
@@ -135,11 +122,6 @@ class ProductMeasurementSalesUnitWriterStep extends PublishAwareStep implements 
         static::$productMeasurementUnitIdBuffer = $productMeasurementUnitCollection->toKeyValue('code', 'idProductMeasurementUnit');
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnit
-     */
     protected function saveProductMeasurementSalesUnit(DataSetInterface $dataSet): SpyProductMeasurementSalesUnit
     {
         $productMeasurementSalesUnitEntity = $this->getProductBySku($dataSet[ProductMeasurementSalesUnitDataSet::COLUMN_CONCRETE_SKU]);

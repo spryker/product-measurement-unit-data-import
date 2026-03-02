@@ -80,9 +80,6 @@ class ProductMeasurementUnitDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'product_measurement_sales_unit_store.csv', static::IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT_STORE);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(
@@ -96,9 +93,6 @@ class ProductMeasurementUnitDataImportConfig extends DataImportConfig
         return $moduleRoot . DIRECTORY_SEPARATOR;
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleDataImportDirectory(): string
     {
         $moduleDataImportDirectory = $this->getModuleRoot() . 'data' . DIRECTORY_SEPARATOR . 'import' . DIRECTORY_SEPARATOR;

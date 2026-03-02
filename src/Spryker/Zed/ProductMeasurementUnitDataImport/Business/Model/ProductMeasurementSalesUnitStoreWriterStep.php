@@ -22,11 +22,6 @@ class ProductMeasurementSalesUnitStoreWriterStep extends PublishAwareStep implem
      */
     protected static $idStoreBuffer;
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $this->saveProductMeasurementSalesUnitStore($dataSet);
@@ -67,9 +62,6 @@ class ProductMeasurementSalesUnitStoreWriterStep extends PublishAwareStep implem
         return static::$idStoreBuffer[$storeName];
     }
 
-    /**
-     * @return void
-     */
     protected function loadStoreIds(): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $storeCollection */
@@ -78,11 +70,6 @@ class ProductMeasurementSalesUnitStoreWriterStep extends PublishAwareStep implem
         static::$idStoreBuffer = $storeCollection->toKeyValue('name', 'idStore');
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     protected function saveProductMeasurementSalesUnitStore(DataSetInterface $dataSet): void
     {
         SpyProductMeasurementSalesUnitStoreQuery::create()

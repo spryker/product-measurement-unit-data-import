@@ -80,33 +80,21 @@ class ProductMeasurementUnitDataImportBusinessFactory extends DataImportBusiness
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnitDataImport\Business\Model\ProductMeasurementUnitWriterStep
-     */
     public function createProductMeasurementUnitWriterStep(): ProductMeasurementUnitWriterStep
     {
         return new ProductMeasurementUnitWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnitDataImport\Business\Model\ProductMeasurementBaseUnitWriterStep
-     */
     public function createProductMeasurementBaseUnitWriterStep(): ProductMeasurementBaseUnitWriterStep
     {
         return new ProductMeasurementBaseUnitWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnitDataImport\Business\Model\ProductMeasurementSalesUnitWriterStep
-     */
     public function createProductMeasurementSalesUnitWriterStep(): ProductMeasurementSalesUnitWriterStep
     {
         return new ProductMeasurementSalesUnitWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnitDataImport\Business\Model\ProductMeasurementSalesUnitStoreWriterStep
-     */
     public function createProductMeasurementSalesUnitStoreWriterStep(): ProductMeasurementSalesUnitStoreWriterStep
     {
         return new ProductMeasurementSalesUnitStoreWriterStep();

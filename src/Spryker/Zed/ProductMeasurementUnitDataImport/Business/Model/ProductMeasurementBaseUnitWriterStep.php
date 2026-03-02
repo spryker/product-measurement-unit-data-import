@@ -23,21 +23,11 @@ class ProductMeasurementBaseUnitWriterStep extends PublishAwareStep implements D
      */
     protected static $productMeasurementUnitIdBuffer;
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $this->saveProductMeasurementBaseUnit($dataSet);
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnit
-     */
     protected function saveProductMeasurementBaseUnit(DataSetInterface $dataSet): SpyProductMeasurementBaseUnit
     {
         $productMeasurementBaseUnitEntity = SpyProductMeasurementBaseUnitQuery::create()
@@ -85,9 +75,6 @@ class ProductMeasurementBaseUnitWriterStep extends PublishAwareStep implements D
         return static::$productMeasurementUnitIdBuffer[$productMeasurementUnitCode];
     }
 
-    /**
-     * @return void
-     */
     protected function loadProductMeasurementUnitIds(): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $productMeasurementUnitCollection */

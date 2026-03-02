@@ -34,9 +34,6 @@ class ProductMeasurementSalesUnitStoreDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class ProductMeasurementSalesUnitStoreDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureMeasurementSalesUnitStoreIsEmpty();
@@ -70,9 +64,6 @@ class ProductMeasurementSalesUnitStoreDataImportPluginTest extends Unit
         $this->tester->assertMeasurementSalesUnitStoreContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $productMeasurementSalesUnitStoreDataImportPlugin = new ProductMeasurementSalesUnitStoreDataImportPlugin();

@@ -40,9 +40,6 @@ class ProductMeasurementSalesUnitDataImportPluginTest extends Unit
      */
     protected static $neededDataAdded = false;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -84,9 +81,6 @@ class ProductMeasurementSalesUnitDataImportPluginTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureMeasurementSalesUnitStoreIsEmpty();
@@ -102,9 +96,6 @@ class ProductMeasurementSalesUnitDataImportPluginTest extends Unit
         $this->tester->assertMeasurementSalesUnitContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $productMeasurementSalesUnitDataImportPlugin = new ProductMeasurementSalesUnitDataImportPlugin();
@@ -114,9 +105,6 @@ class ProductMeasurementSalesUnitDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return \Spryker\Zed\Product\Business\ProductFacadeInterface
-     */
     protected function getProductFacade(): ProductFacadeInterface
     {
         return $this->tester->getLocator()->product()->facade();

@@ -16,46 +16,29 @@ use Spryker\Zed\ProductMeasurementUnitDataImport\Communication\Plugin\ProductMea
 
 class ProductMeasurementBaseUnitDataImportHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function ensureMeasurementBaseUnitIsEmpty(): void
     {
         $query = $this->getProductMeasurementBaseUnitQuery();
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertMeasurementBaseUnitIsEmpty(): void
     {
         $query = $this->getProductMeasurementBaseUnitQuery();
         $this->assertCount(0, $query, 'Found at least one entry in the database table but database table was expected to be empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertMeasurementBaseUnitContainsData(): void
     {
         $query = $this->getProductMeasurementBaseUnitQuery();
         $this->assertTrue(($query->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnitQuery
-     */
     protected function getProductMeasurementBaseUnitQuery(): SpyProductMeasurementBaseUnitQuery
     {
         return SpyProductMeasurementBaseUnitQuery::create();
     }
 
-    /**
-     * @param string $dataDir
-     *
-     * @return \Generated\Shared\Transfer\DataImporterReportTransfer
-     */
     public function importMeasurementBaseUnitData(string $dataDir): DataImporterReportTransfer
     {
         $dataImporterReaderConfigurationTransfer = new DataImporterReaderConfigurationTransfer();
